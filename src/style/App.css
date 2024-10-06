@@ -126,3 +126,6 @@ header {
     margin: -80vh auto 100px 38vh;
 }
 
+.header-content h3 {
+    margin-left: 50px;
+}
