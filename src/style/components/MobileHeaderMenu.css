@@ -1,0 +1,210 @@
+.mobile-header-menu {
+    top: 30vh;
+    right: 0;
+    position: fixed;
+    z-index: 100;
+    display: none;
+}
+
+.mobile-header-menu.visible {
+    right: calc(4vh - 30vh);  /* (.menu-icon size: 4vh) - (.mobile-header-menu li width: 30vh) */
+    display: block;
+    animation: emerge-mobile-menu 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes emerge-mobile-menu {
+    0% {
+        width: 0%;
+        opacity: 0;
+    }
+    100% {
+        width: calc(30vh + 10vh);  /* (.mobile-header-menu li width: 30vh) + 10vh(extra) */
+        opacity: 1;
+    }
+}
+
+.mobile-header-menu li {
+    list-style: none;
+    padding: 10px 20px;
+    margin: 5px 0px;
+    border-top: 0.08em solid var(--whiteColor01);
+    border-left: 0.08em solid var(--whiteColor01);
+    border-bottom: 0.08em solid var(--whiteColor01);
+    border-radius: 30px;
+    position: relative;
+    color: var(--whiteColor01);
+    background-color: transparent;
+    width: 30vh;
+    /* right: calc(4vh - 30vh);  /* (.menu-icon size: 4vh) - (.mobile-header-menu li width: 30vh) */
+    /* right: -10px; */
+}
+
+.mobile-header-menu li::before {
+    background-color: red;
+    width: 30px;
+    z-index: 100;
+}
+
+/* Menu Icons */
+.menu-icon {
+    display: inline-block;
+    vertical-align: middle;
+    color: var(--whiteColor01);
+    line-height: 1;
+    margin: 5px 20px 10px 0px;
+    width: 4vh;
+}
+
+/* About Icon */
+.menu-icon.about {
+    width: 1.2em;
+    line-height: 1;
+}
+
+.menu-icon.about::before, .menu-icon.about::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    border: 0.07em solid currentColor;
+    box-sizing: border-box;
+}
+
+.menu-icon.about::before {
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    margin-bottom: 0.05em;
+}
+
+.menu-icon.about::after {
+    width: 1em;
+    height: 0.4em;
+    border-bottom: 0;
+    border-radius: 50% / 100% 100% 0 0;
+}
+/* About Icon end */
+
+/* Projects Icon */
+.menu-icon.projects {
+    margin-top: 10px;
+    width: 1.2em;
+    height: 0.7em;
+    border: 0.07em solid currentColor;
+    border-radius: 0 0.1em 0.1em 0.1em;
+    box-sizing: content-box;
+}
+
+.menu-icon.projects > span {
+    position: absolute;
+    left: 20px;
+    bottom: 65%;
+    width: 0.5em;
+    height: 0.2em;
+    border: 0.07em solid currentColor;
+    border-right: 0;
+    border-bottom: 0;
+    border-radius: 0.1em 0.1em 0 0;
+    box-sizing: content-box;
+}
+
+.menu-icon.projects > span::before {
+    content: '';
+    position: absolute;
+    top: -0.07em;
+    left: calc(100% - 0.1em);
+    width: 0.175em;
+    height: 0;
+    border-top: 0.07em solid currentColor;
+    transform: rotate(55deg);
+    transform-origin: left bottom;
+    box-sizing: content-box;
+}
+/* Projects Icon end */
+
+/* Skills Icon */
+.menu-icon.skills {
+    margin-top: 1px;
+    width: 1em;
+    height: 0.63em;
+    border: 0.07em solid currentColor;
+    border-radius: 0 0.1em 0.1em 0.1em;
+    box-sizing: content-box;
+}
+.menu-icon.skills::after {
+    content: '';
+    background-color: transparent;
+    display: block;
+    width: 1em;
+    height: 0.05em;
+    position: relative;
+    top: 125%;
+    left: -0.05em;
+    border: 0.07em solid currentColor;
+    border-radius: 3px;
+}
+/* Skills Icon end */
+
+/* Contact Icon */
+.menu-icon.contact {
+    width: 1.06667em;
+    height: 0.8em;
+    border: 0.07em solid currentColor;
+    border-radius: 0.1em;
+    box-sizing: content-box;
+}
+
+.menu-icon.contact::before {
+    content: '';
+    position: relative;
+    left: 47.8%;
+    top: 15%;
+    display: inline-block;
+    width: 0.6em;
+    height: 0.6em;
+    border: 0.07em solid currentColor;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-radius: 0 0 0 0.1em;
+    box-sizing: content-box;
+    transform: translate(-50%, -50%) rotate(-45deg) skew(10deg, 10deg);
+}
+/* Contact Icon end */
+
+/* Languages Icon */
+.menu-icon.languages {
+    width: 1em;
+    height: 1em;
+    border: 0.07em solid currentColor;
+    border-radius: 50%;
+    box-sizing: content-box;
+    text-align: center;
+}
+
+.menu-icon.languages > span {
+    font-size: 0.3em;
+    top: -120%;
+    position: relative;
+}
+
+.menu-icon.languages::before {
+    content: '';
+    position: relative;
+    left: -10px;
+    bottom: -8px;
+    display: inline-block;
+    width: 0.3em;
+    height: 0.3em;
+    background-color: transparent;
+    border: 0.07em solid currentColor;
+    border-top: none;
+    border-left: none;
+    transform: rotate(85deg) skew(20deg, 20deg);
+}
+
+.menu-icon.speech-bubble-bottom {
+    width: 0.5em;
+    height: 0.5em;
+    top: -5.5em !important;
+    background-color: var(--blackColor);    
+}
+/* Languages Icon end */

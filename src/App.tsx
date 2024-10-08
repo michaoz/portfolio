@@ -1,39 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './style/App.css';
+import MobileHeaderMenu from './components/MobileHeaderMenu';
+import ContentMain from './components/ContentMain';
+import ContentHeader from './components/ContentHeader';
+import { PropTypeContentMain } from './type/PropTypeContentMain';
+import { PropTypeMobileHeaderMenu } from './type/PropTypeMobileHeaderMenu';
+import { PropTypeHeaderMenu } from './type/PropTypeHeaderMenu';
 
 function App() {
+  const [visibleMobileHeaderMenu, setVisibleMobileHeaderMenu] = useState<boolean>(false);
+  console.log('visibleMobileHeaderMenu', visibleMobileHeaderMenu);
+
+  /* Props */
+  const propHeaderMenu: PropTypeHeaderMenu = {
+    visibleHeaderMenu: !visibleMobileHeaderMenu,
+  }
+  const propMobileHeaderMenu: PropTypeMobileHeaderMenu = {
+    visibleMobileHeaderMenu: visibleMobileHeaderMenu,
+  }
+  const propContentMain: PropTypeContentMain = {
+    setVisibleMobileHeaderMenu: setVisibleMobileHeaderMenu,
+  }
+  /* Props end */
+
   return (
-    <div>
-        <header>
-            <nav className="header-menu">
-                <ul>
-                    <li className="list-items">About</li>
-                    <li className="list-items">Projects</li>
-                    <li className="list-items">Skills</li>
-                    <li className="list-items">Contact</li>
-                    <li className="list-items">Languages</li>
-                </ul>
-            </nav>
-            <nav className="mobile-header-menu">
-                <ul>
-                    <li className="list-items">About</li>
-                    <li className="list-items">Projects</li>
-                    <li className="list-items">Skills</li>
-                    <li className="list-items">Contact</li>
-                    <li className="list-items">Languages</li>
-                </ul>
-            </nav>
-            <div className="header-vertical-sector"></div>
-            <div className="header-horizontal-sector"></div>
-            <div className="header-content">
-                <p>Hello. My name is</p>
-                <h1>Michiko Aozasa / Mia.</h1>
-                <h3>A Full-Stack Developer / Engineer</h3>
-            </div>
-        </header>
-        <main>
-        </main>    
+    <div id="app">
+        <ContentHeader {...propHeaderMenu} />
+        <MobileHeaderMenu {...propMobileHeaderMenu} />
+        <ContentMain {...propContentMain} />
     </div>
   );
 }
