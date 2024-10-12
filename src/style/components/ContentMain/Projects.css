@@ -1,0 +1,214 @@
+.projects-list {
+    font-size: 3.5vh;
+    display: flex;
+    margin-left: 12vh;
+}
+
+.projects-list > div {
+    margin: 0 50px;
+}
+
+.projects-list h5 {
+    margin: 0.7em 0;
+}
+
+.project-info {
+    width: 70vh;
+    height: 40vh;
+    display: flex;
+    padding: 5px;
+}
+
+.border {
+    display: flex;
+    width: 70vh;
+    height: 40vh;
+    background-color: transparent;
+    position: absolute;
+    margin-top: calc(-40vh - 0.2em - 0.3em);  /* - ((.project-info width) + (border height) + (extra)) */
+
+}
+
+.border > .horizontal {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.1em;
+    background-color: var(--bluePurpleColor02);
+    /* animation: stroke-prj-border-horizontal 1.5s var(--easeIn02); */
+}
+
+.border > .active.horizontal {
+    animation: stroke-prj-border-horizontal 1.5s var(--easeIn02);
+}
+
+.border > .horizontal.top {
+    margin-bottom: auto;
+    left: 0;
+    top: 0;
+}
+.border > .horizontal.bottom {
+    margin-top: auto;
+    right: 0;
+    bottom: 0;
+}
+
+@keyframes stroke-prj-border-horizontal {
+    0% {
+        width: 0%;
+        opacity: 1;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+.border > .vertical {
+    content: "";
+    position: absolute;
+    width: 0.1em;
+    height: 100%;
+    background-color: var(--bluePurpleColor02);
+    /* animation: stroke-prj-border-vertical 1.5s var(--easeIn02); */
+}
+
+.border > .active.vertical {
+    animation: stroke-prj-border-vertical 1.5s var(--easeIn02);
+}
+
+.border > .vertical.right {
+    margin-left: auto;
+    right: 0;
+    top: 0;
+}
+
+.border > .vertical.left {
+    margin-right: auto;
+    left: 0;
+    bottom: 0;
+}
+
+@keyframes stroke-prj-border-vertical {
+    0% {
+        height: 0%;
+        opacity: 1;
+    }
+    100% {
+        height: 100%;
+        opacity: 1;
+    }
+}
+
+.project-info > img {
+    width: 25vh;
+    max-height: 17vh;
+    border-radius: 3px;
+    margin: 0 5px 0 7px;
+}
+
+.project-text {
+    width: 37vh;
+    font-size: 2vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.project-text h4 {
+    margin: 0.5em 0;
+}
+
+.project-text p {
+    margin: 0;
+}
+
+.project-tech-stack {
+    margin: 1.5em 0;
+}
+
+.project-tech-stack ul {
+    padding-left: 0;
+    margin: 0;
+}
+
+.project-tech-stack ul li {
+    height: 1.3em;
+    list-style-type: none;
+    background: #dbebf8;
+    color: var(--blackColor);
+    padding: 0 0 0 1em;
+    border-radius: 10px 0 0 10px;
+    margin: 0.5em 0;
+}
+
+.project-tech-stack ul li::before {
+    content: '';
+    border: 1px solid var(--whiteColor01);
+    border-radius: 50%;
+    background-color: var(--whiteColor01);
+    display: inline-block;
+    width: 0.3em;
+    height: 0.3em;
+    margin-right: 1em;
+}
+
+.view-all {
+    color: var(--whiteColor01);
+    width: calc(70vh / 7);  /* (.border width) * 1/7 */
+    height: 2em;
+/*    margin: 30px 0 10px calc(12vh + 50px);  /* (.projects-list margin-left) + (.projects-list > div) */
+    font-size: calc(3.5vh - 1vh);  /* (.projects-list font-size) - (extra) */
+    transition: background-color 0.2s;
+    &:hover {
+        cursor: pointer;
+        color: var(--bluePurpleColor02);
+    }
+}
+
+.view-all::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 0.5em;
+    height: 0.1em;
+    background-color: var(--whiteColor01);
+    transform: rotate(-45deg);
+    margin-left: calc(70vh / 8);
+    margin-top: calc(2em);  /* (.view-all height) */
+    transition: background-color 0.1s;
+}
+
+.view-all:hover::before {
+    cursor: pointer;
+    background-color: var(--bluePurpleColor02);
+}
+
+.view-all::after {
+    content: "";
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 0.1em;
+    background-color: var(--whiteColor01);
+    transition: background-color 0.1s;
+}
+
+.view-all:hover::after {
+    cursor: pointer;
+    background-color: var(--bluePurpleColor02);
+}
+
+.view-all-link {
+    display: inline-block;
+    margin: 30px 0 10px calc(12vh + 50px);  /* (.projects-list margin-left) + (.projects-list > div) */
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+    &:hover {
+        cursor: pointer;
+    }
+}

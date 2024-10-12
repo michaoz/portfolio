@@ -6,27 +6,15 @@ header {
     top: 0;
     right: 0;
     position: fixed;
-    margin-right: 10vh;
+    margin-right: 10vw;
     cursor: pointer;
+    opacity: 0;
     visibility: hidden;
 }
 
 .header-menu.visible {
-    /*right: calc(4vh - 30vh);  /* (.menu-icon size: 4vh) - (.mobile-header-menu li width: 30vh) */
-    /* display: block; */
     visibility: visible;
-    animation: emerge-menu 0s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-@keyframes emerge-menu {
-    0% {
-        width: 0%;
-        opacity: 0;
-    }
-    100% {
-        width: 0%;  /* (.mobile-header-menu li width: 30vh) + 10vh(extra) */
-        opacity: 1;
-    }
+    opacity: 1;
 }
 
 .header-menu li {
@@ -94,7 +82,7 @@ header {
 }
 
 .header-content {
-    margin: -80vh auto 100px 38vh;
+    margin: -80vh auto 100px 18vw;
 }
 
 h1 {

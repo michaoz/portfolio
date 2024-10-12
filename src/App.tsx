@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { MutableRefObject, useState } from 'react';
 import './style/App.css';
 import MobileHeaderMenu from './components/MobileHeaderMenu';
 import ContentMain from './components/ContentMain';
@@ -10,16 +10,20 @@ import { PropTypeHeaderMenu } from './type/PropTypeHeaderMenu';
 function App() {
   const [visibleMobileHeaderMenu, setVisibleMobileHeaderMenu] = useState<boolean>(false);
   console.log('visibleMobileHeaderMenu', visibleMobileHeaderMenu);
+  const [headerMenuRefs, setHeaderMenuRefs] = useState<MutableRefObject<HTMLDivElement | null>[]>([]);
 
   /* Props */
   const propHeaderMenu: PropTypeHeaderMenu = {
     visibleHeaderMenu: !visibleMobileHeaderMenu,
+    headerMenuRefs: headerMenuRefs,
   }
   const propMobileHeaderMenu: PropTypeMobileHeaderMenu = {
     visibleMobileHeaderMenu: visibleMobileHeaderMenu,
+    headerMenuRefs: headerMenuRefs,
   }
   const propContentMain: PropTypeContentMain = {
     setVisibleMobileHeaderMenu: setVisibleMobileHeaderMenu,
+    setHeaderMenuRefs: setHeaderMenuRefs,
   }
   /* Props end */
 

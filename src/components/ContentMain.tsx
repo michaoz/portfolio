@@ -2,37 +2,92 @@ import React, { useEffect, useRef, useState } from 'react';
 import '../style/App.css';
 import '../style/components/ContentMain.css';
 import { PropTypeContentMain } from '../type/PropTypeContentMain';
+import About from './ContentMain/About';
+import Projects from './ContentMain/Projects';
+import { PropTypeContentMainProjects } from '../type/PropTypeContentMainProjects';
+import Skills from './ContentMain/Skills';
+import { PropTypeContentMainSkills } from '../type/PropTypeContentMainSkills';
+import Contact from './ContentMain/Contact';
 
 const ContentMain = (props: PropTypeContentMain) => {
-  const { setVisibleMobileHeaderMenu } = props;
+  const { setVisibleMobileHeaderMenu, setHeaderMenuRefs } = props;
 
   const mainContentRef = useRef<HTMLDivElement | null>(null);
-  
+
+  const [visiblePrjBorders, setVisiblePrjBorders] = useState<boolean>(false);
+  // Activate or stop the animation of visibility when scrolled to the Skills page
+  const [visibleSkillsPieChart, setVisibleSkillsPieChart] = useState<boolean>(false);
+
+  /** each section */
+  const aboutRef = useRef<HTMLDivElement | null>(null);
+  const projectsRef = useRef<HTMLDivElement | null>(null);
+  const skillsRef = useRef<HTMLDivElement | null>(null);
+  const contactRef = useRef<HTMLDivElement | null>(null);
+  /** each section end */
+
+  /** props */
+  const propProjects: PropTypeContentMainProjects = {
+    visiblePrjBorders: visiblePrjBorders,
+  }
+  const propSkills: PropTypeContentMainSkills = {
+    visibleSkillsPieChart: visibleSkillsPieChart,
+  }
+  /** props end */
+
   useEffect(() => {
+    // Observe main content element 
+    // to show/hide header menu/mobile header menu. 
     console.log('mainContentRef', mainContentRef.current);
-    const observer = new IntersectionObserver((entries) => {
+    const mainContentObserver = new IntersectionObserver((entries) => {
       const entry = entries[0];  // need the 1st elm only
       setVisibleMobileHeaderMenu(entry.isIntersecting);
     })
     if (mainContentRef.current !== null) {
-      observer.observe(mainContentRef.current);
+      mainContentObserver.observe(mainContentRef.current);
     }
+
+    /* Observe Projects in main content element */
+    // to show borders of projects.
+    const mainContentProjectsObserver = new IntersectionObserver((entries) => {
+      const entry = entries[0];  // need the 1st elm only
+      setVisiblePrjBorders(entry.isIntersecting);
+    })
+    if (projectsRef.current !== null) {
+      mainContentProjectsObserver.observe(projectsRef.current);
+    }
+    /* Observe Projects in main content element end */
+
+    /* Observe Skills in main content element */
+    // to show borders of projects.
+    const mainContentSkillsObserver = new IntersectionObserver((entries) => {
+      const entry = entries[0];  // need the 1st elm only
+      setVisibleSkillsPieChart(entry.isIntersecting);
+    })
+    if (skillsRef.current !== null) {
+      mainContentSkillsObserver.observe(skillsRef.current);
+    }
+    /* Observe Skills in main content element end */
+
+    // get elms from each section
+    const headerMenuRefs = [aboutRef, projectsRef, skillsRef, contactRef];
+    setHeaderMenuRefs(headerMenuRefs);
+    
   }, []);
   
   return (
     <main>
       <div ref={mainContentRef}>
-        <section className="about wrapper">
-          <h1>About Me</h1>
+        <section className="about wrapper" id="about" ref={aboutRef}>
+          <About />
         </section>
-        <section className="projects wrapper">
-          <h1>Projects</h1>
+        <section className="projects wrapper" id="projects" ref={projectsRef}>
+          <Projects {...propProjects} />
         </section>
-        <section className="skills wrapper">
-          <h1>Skills</h1>
+        <section className="skills wrapper" id="skills" ref={skillsRef}>
+          <Skills {...propSkills} />
         </section>
-        <section className="contact wrapper">
-          <h1>Contact</h1>
+        <section className="contact wrapper" id="contact" ref={contactRef}>
+          <Contact />
         </section>
       </div>
     </main>
