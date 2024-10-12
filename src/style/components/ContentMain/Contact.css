@@ -1,0 +1,31 @@
+.contact-content {
+    margin-left: 10vh;  /* h1 width */
+}
+
+.contact-content > .contact-text {
+    margin: 5vw;
+}
+
+.contact-text {
+    font-size: calc(2vw - 0.2vw);
+}
+
+.contact-means > div {
+    margin: 0 5vw;
+}
+
+#email, #linkedin {
+    display: flex;
+}
+
+#email > .contact-title {
+    font-family: var(--fontFamily02);
+}
+
+#linkedin > .contact-title {
+    font-family: var(--fontFamily02);
+}
+
+.contact-title {
+    margin-right: 2em;
+}

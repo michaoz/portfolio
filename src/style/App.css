@@ -1,13 +1,17 @@
 :root {
     /** font */
-    --fontFamily: 'Garamond', serif;
+    --fontFamily01: 'Garamond', serif;
+    --fontFamily02: 'Courier New', monospace;
+    --fontFamily03: 'Trebuchet MS', sans-serif;
+
+    --fontSize01: 2vw;
     /** font end */
 
     /** color */
+    --lightPink02Color: rgb(255, 255, 157);
     --red01: #DC143C;
     --orange01: #FF570D;
     --lightBluePinkColor: #FFE0ED;
-    --lightGrayColor02: #ccc8c8;
     --yellowColor01: #FFFF9D;
     --lightYellowColor: #FFFFDD;
     --greenColor: #5ebfac;
@@ -17,13 +21,33 @@
     --darkPink01Color: #DA1884;
     --darkPink02Color: #bc1873;
     --darkPink03Color: #a11462;
+    --lightBlueColor01: #dbebf8;
+    --lightBlueColor02: #abdcf5;
+    --lightBluePurpleColor01: #686aef;
+    --bluePurpleColor01: #5643CC;
+    --bluePurpleColor02: #572ad4;
+    --darkBluePurpleColor01: #572ad49e;
+    --navyColor01: #172749;
     --grayColor: #696666;
     --gray02Color: #61646d;
     --darkGrayColor: #42454e;
     --lightGrayColor01: #808080;
+    --lightGrayColor02: #ccc8c8;
     --blackColor: #000;
     --whiteColor01: #fff;
     --whiteColor02: #f7f8f9;
+
+    /** animation */
+    --easeIn01: cubic-bezier(0.33, 1, 0.68, 1);
+    --easeIn02: cubic-bezier(0.37, 0, 0.63, 1)
+    /** animation end */
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    /* max-width: 1820px; */
 }
 
 #app {
@@ -32,18 +56,38 @@
 }
 
 body {
-    font-family: var(--fontFamily);
-    font-size: 30px;
+    width: 100vw;
+    height: 100vh;
+    font-family: var(--fontFamily01);
+    font-size: var(--fontSize01);
     background-color: var(--whiteColor01);
 }
 
 main {
+    width: 100vw;
+    height: 100vh;
     background-color: var(--blackColor);
     color: var(--whiteColor01);
 }
 
+main > div {
+    background-color: var(--blackColor);
+}
+
 .wrapper {
-    max-width: 1200px;
+    width: 100%;
+    /* max-width: 1820px; */
+}
+
+.header-menu-btn {
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 

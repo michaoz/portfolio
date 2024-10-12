@@ -1,0 +1,54 @@
+.skills-text {
+    margin-left: 10vh;  /* h1 width */
+    margin-bottom: 5em;
+    font-size: 3vh;
+    padding-left: 5vw;
+}
+
+.skills-content {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    margin-left: calc(10vh + 5vw);  /* h1 width + skills-text padding-left */
+}
+
+.skills-piechart {
+    position: relative;
+    display: flex;
+    margin: 0 1.5em 1em 0;
+}
+
+.skills-piechart > .piechart {
+    position: relative;
+    height: 30vh!important;
+    width: 30vh!important;
+}
+
+.skills-piechart > .labels {
+    width: 20vh;
+    height: calc(30vh - 10vh);  /* (.skills-piechart > .piechart height) - (.skills-piechart > .labels top) */
+    color: var(--whiteColor01);
+    font-size: 20px;
+    position: relative;
+    left: 0;
+    top: 10vh;
+}
+
+.skills-piechart > .labels > ul {
+    list-style: none;
+    padding-left: 0;
+    font-family: var(--fontFamily02);
+}
+
+.labels-li {
+    display: flex;
+    margin: 0.2em 0;
+}
+
+.labels-li > div {
+    width: 1em;
+    height: 1em;
+    position: relative;
+    margin-right: 0.5em;
+}

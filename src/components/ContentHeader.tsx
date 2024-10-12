@@ -4,17 +4,51 @@ import '../style/components/ContentHeader.css';
 import { PropTypeHeaderMenu } from '../type/PropTypeHeaderMenu';
 
 const Header = (props: PropTypeHeaderMenu) => {
-    const { visibleHeaderMenu } = props;
+    const { visibleHeaderMenu, headerMenuRefs } = props;
+
+    const handleHeaderMenuButton = (e: React.MouseEvent<HTMLButtonElement>) => {
+        const eventId = e.currentTarget.id;
+
+        // Scroll the screen smoothly.
+        for (var ref of headerMenuRefs) {
+            if (eventId === ref?.current?.id) {
+                ref.current?.scrollIntoView({
+                    behavior: 'smooth'
+                });
+                break;
+            }
+        }        
+    };
 
     return (
         <header>
             <nav className={visibleHeaderMenu ? "header-menu visible" : "header-menu"} >
                 <ul>
-                    <li className="list-items">About</li>
-                    <li className="list-items">Projects</li>
-                    <li className="list-items">Skills</li>
-                    <li className="list-items">Contact</li>
-                    <li className="list-items">Languages</li>
+                    <li className="list-items">
+                        <button className="header-menu-btn" id="about" type="button" onClick={handleHeaderMenuButton}>
+                            About
+                        </button>
+                    </li>
+                    <li className="list-items">
+                        <button className="header-menu-btn" id="projects" type="button" onClick={handleHeaderMenuButton}>
+                            Projects
+                        </button>
+                    </li>
+                    <li className="list-items">
+                        <button className="header-menu-btn" id="skills" type="button" onClick={handleHeaderMenuButton}>
+                            Skills
+                        </button>
+                    </li>
+                    <li className="list-items">
+                        <button className="header-menu-btn" id="contact" type="button" onClick={handleHeaderMenuButton}>
+                            Contact
+                        </button>
+                    </li>
+                    <li className="list-items">
+                        <button className="header-menu-btn" id="languages" type="button" onClick={handleHeaderMenuButton}>
+                            Languages
+                        </button>
+                    </li>
                 </ul>
             </nav>
             <div className="header-vertical-sector"></div>
