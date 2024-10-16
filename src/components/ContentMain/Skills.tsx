@@ -132,8 +132,9 @@ const Skills = (props: PropTypeContentMainSkills) => {
                                             const style = {
                                                 backgroundColor: backgroundColor,
                                             }
+                                            const key = label + idx;
                                             return(
-                                                <li className="labels-li">
+                                                <li key={key} className="labels-li">
                                                     <div style={style}></div>
                                                     {label}
                                                 </li>

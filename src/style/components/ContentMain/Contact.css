@@ -18,6 +18,16 @@
     display: flex;
 }
 
+#email > p,
+#linkedin > p {
+    margin: 1em 0;
+}
+
+#email > div,
+#linkedin > div {
+    margin-left: 0.5em;
+}
+
 #email > .contact-title {
     font-family: var(--fontFamily02);
 }
@@ -27,5 +37,62 @@
 }
 
 .contact-title {
-    margin-right: 2em;
+    margin-right: 2em!important;
+}
+
+.btn-copy {
+    height: 100%;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.btn-copy > p {
+    margin: 0;
+    margin-bottom: 0.5em;
+    color: var(--whiteColor01);
+    width: calc(1.5em + 0.5em);  /* (.icon-copy width) + extra */
+}
+
+.icon-copy {
+    display: inline-block;
+    width: calc(1.3em + 0.2em);  /* (.icon-copy > div width) + (.icon-copy > #icon-copy-front margin-left) */
+    height: calc(1.3em * 1.3 + 0.2em);
+    /* height: 100%; */
+    margin: 0;
+    margin-bottom: 1.5em;
+}
+
+.icon-copy > div {
+    position: absolute;
+    width: 1.3em;
+    height: calc(1.3em * 1.3);
+    border: 1px solid var(--blackColor);
+    border-radius: 2px;
+}
+
+.icon-copy > #icon-copy-back {
+    background-color: var(--lightBlueColor01);
+    &:hover {
+        background-color: var(--lightBluePurpleColor01);
+    }
+    &:hover~#icon-copy-front {
+        background-color: var(--lightBluePurpleColor01);
+    }
+}
+
+.icon-copy > #icon-copy-front {
+    background-color: var(--lightBlueColor01);
+    margin-left: 0.2em;
+    margin-top: 0.2em;
+    &:hover {
+        background-color: var(--lightBluePurpleColor01);
+    }
+}
+
+#icon-copy-back:has(~#icon-copy-front:hover){
+    background-color: var(--lightBluePurpleColor01);
 }
