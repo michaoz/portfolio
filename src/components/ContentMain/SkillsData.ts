@@ -8,12 +8,12 @@ export const SkillsData = {
         {
             id: 2,
             skill: "ReactJS",
-            level: 3,
+            level: 3 / 12,
         },
         {
             id: 3,
             skill: "TypeScript",
-            level: 3,
+            level: 3 / 12,
         },
     ],
     backend: [

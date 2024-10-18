@@ -1,5 +1,6 @@
 .contact-content {
     margin-left: 10vh;  /* h1 width */
+    font-size: var(--fontSize02);
 }
 
 .contact-content > .contact-text {
@@ -30,10 +31,14 @@
 
 #email > .contact-title {
     font-family: var(--fontFamily02);
+    word-break: break-all;
+    width: 20vw;
 }
 
 #linkedin > .contact-title {
     font-family: var(--fontFamily02);
+    word-break: break-all;
+    width: 20vw;
 }
 
 .contact-title {
