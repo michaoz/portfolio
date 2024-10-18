@@ -5,7 +5,7 @@ import '../../style/components/ContentMain/Contact.css';
 const Contact = () => {
 
     // const email = "a.bmg3168@icloud";
-    const email = "aaaaaaa";
+    const email = "a.bmg3168@icloud.com";
     const linkedin = "https://www.linkedin.com/in/michiko-aozasa-07b374271";
 
     const [copyTextEmail, setCopyTextEmail] = useState<string>("copy");
