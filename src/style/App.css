@@ -27,20 +27,24 @@
     --lightBluePurpleColor01: #686aef;
     --bluePurpleColor01: #5643CC;
     --bluePurpleColor02: #572ad4;
-    --darkBluePurpleColor01: #572ad49e;
+    --bluePurpleColor02Tranparent: #572ad49e;
+    --darkBluePurpleColor01: #33197a;
     --navyColor01: #172749;
     --grayColor: #696666;
     --gray02Color: #61646d;
-    --darkGrayColor: #42454e;
+    --darkGrayColor01: #42454e;
+    --darkGrayColor02: #2a2a2b;
     --lightGrayColor01: #808080;
     --lightGrayColor02: #ccc8c8;
-    --blackColor: #000;
+    --blackColor01: #000;
+    --blackColor02: #141414;
     --whiteColor01: #fff;
     --whiteColor02: #f7f8f9;
 
     /** animation */
     --easeIn01: cubic-bezier(0.33, 1, 0.68, 1);
-    --easeIn02: cubic-bezier(0.37, 0, 0.63, 1)
+    --easeInOutSine01: cubic-bezier(0.37, 0, 0.63, 1);
+    --easeOutCirc01: cubic-bezier(0, 0.55, 0.45, 1);
     /** animation end */
 }
 
@@ -66,13 +70,13 @@ body {
 
 main {
     width: 100vw;
-    height: 100vh;
-    background-color: var(--blackColor);
+    height: 100%;
+    background-color: var(--blackColor02);
     color: var(--whiteColor01);
 }
 
 main > div {
-    background-color: var(--blackColor);
+    background-color: var(--blackColor02);
 }
 
 .wrapper {

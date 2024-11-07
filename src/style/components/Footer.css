@@ -1,0 +1,30 @@
+footer {
+    /* height: 20vh; */
+    width: 100vw;
+    padding: 50vh 0 0 0;
+    background-color: var(--blackColor02);
+}
+
+.footer-horizontal-line {
+    content: "";
+    background-color: var(--darkPink01Color);
+    height: 0.05em;
+    width: 15em;
+    margin: 0 auto;
+}
+
+.icon-container {
+    display: flex;
+    height: 50px;
+    padding: 3vh calc(50vw - 3em);
+}
+
+.icon-container svg {
+    width: 2em;
+    height: 1em;
+    color: var(--whiteColor01);
+    cursor: pointer;
+    &:hover {
+        color: var(--darkPink01Color);
+    }
+}

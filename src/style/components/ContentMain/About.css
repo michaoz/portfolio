@@ -15,7 +15,7 @@
     max-width: 25vw;
     max-height: 70vh;
     border-radius: 10%;
-    box-shadow: var(--darkGrayColor) 25px 25px 50px 15px;
+    box-shadow: var(--darkGrayColor01) 25px 25px 50px 15px;
 }
 
 .about-text {

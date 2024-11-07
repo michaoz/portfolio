@@ -49,13 +49,13 @@
     cursor: pointer;
     right: 0;
     background-color: var(--greenColor);
-    color: var(--blackColor);
+    color: var(--blackColor01);
     transition: all 0.5s;
     button i {
-        color: var(--blackColor);
+        color: var(--blackColor01);
     }
     button span {
-        color: var(--blackColor);
+        color: var(--blackColor01);
     }
     .menu-icon .speech-bubble-bottom {
         background-color: var(--greenColor);
@@ -237,7 +237,7 @@
     height: 0.6em;
     left: -0.6em;
     top: -5em !important;
-    background-color: var(--blackColor);
+    background-color: var(--blackColor02);
     transform: rotate(85deg); 
 }
 /* Languages Icon end */

@@ -2,10 +2,11 @@ import React, { MutableRefObject, useState } from 'react';
 import './style/App.css';
 import MobileHeaderMenu from './components/MobileHeaderMenu';
 import ContentMain from './components/ContentMain';
-import ContentHeader from './components/ContentHeader';
+import Header from './components/Header';
 import { PropTypeContentMain } from './type/PropTypeContentMain';
 import { PropTypeMobileHeaderMenu } from './type/PropTypeMobileHeaderMenu';
 import { PropTypeHeaderMenu } from './type/PropTypeHeaderMenu';
+import Footer from './components/Footer';
 
 function App() {
   const [visibleMobileHeaderMenu, setVisibleMobileHeaderMenu] = useState<boolean>(false);
@@ -29,9 +30,10 @@ function App() {
 
   return (
     <div id="app">
-        <ContentHeader {...propHeaderMenu} />
+        <Header {...propHeaderMenu} />
         <MobileHeaderMenu {...propMobileHeaderMenu} />
         <ContentMain {...propContentMain} />
+        <Footer />
     </div>
   );
 }
