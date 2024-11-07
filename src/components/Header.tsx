@@ -1,6 +1,6 @@
 import React from 'react';
 import '../style/App.css';
-import '../style/components/ContentHeader.css';
+import '../style/components/Header.css';
 import { PropTypeHeaderMenu } from '../type/PropTypeHeaderMenu';
 
 const Header = (props: PropTypeHeaderMenu) => {
