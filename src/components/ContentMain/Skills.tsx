@@ -11,7 +11,8 @@ import { PropTypeContentMainSkills } from '../../type/PropTypeContentMainSkills'
 Chart.register(CategoryScale);
 
 const Skills = (props: PropTypeContentMainSkills) => {
-    const { visibleSkillsPieChart } = props;
+    const { reachSkillsPage } = props;
+    const visibleSkillsPieChart = reachSkillsPage;
 
     const backgroundColor = [
         'rgb(104, 106, 239, 0.8)',
@@ -78,7 +79,8 @@ const Skills = (props: PropTypeContentMainSkills) => {
             <h1>Skills</h1>
             <div className="skills-text">
                 <p>
-                    Tech Skills that I mainly have been using. The percentage indicates the level of my familiarity with each tech skill.
+                    {/* Tech Skills that I mainly have been using. The percentage indicates the level of my familiarity with each tech skill. */}
+                    Tech Skills that I mainly have been using. The percentage indicates the years of the commercial experience in each technology.
                 </p>
             </div>
             {visibleSkillsPieChart ? 

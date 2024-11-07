@@ -33,7 +33,7 @@ const Projects = (props: PropTypeContentMainProjects) => {
                             <div className="project-tech-stack">
                                 <p>Tech Stack</p>
                                 <ul>
-                                    <li>Java</li>
+                                    <li>Java (Spring MVC)</li>
                                     <li>JQuery, JavaScript</li>
                                     <li>HTML, CSS</li>
                                     <li>PostGreSQL</li>
@@ -60,8 +60,8 @@ const Projects = (props: PropTypeContentMainProjects) => {
                             <div className="project-tech-stack">
                                 <p>Tech Stack</p>
                                 <ul>
-                                    <li>Python</li>
-                                    <li>React</li>
+                                    <li>Python (Flask)</li>
+                                    <li>ReactJS</li>
                                     <li>TypeScript</li>
                                     <li>HTML, CSS</li>
                                 </ul>
