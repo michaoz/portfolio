@@ -13,7 +13,9 @@ const Header = (props: PropTypeHeaderMenu) => {
         for (var ref of headerMenuRefs) {
             if (eventId === ref?.current?.id) {
                 ref.current?.scrollIntoView({
-                    behavior: 'smooth'
+                    behavior: 'smooth',
+                    block: "start",
+                    inline: "start",
                 });
                 break;
             }
@@ -56,7 +58,7 @@ const Header = (props: PropTypeHeaderMenu) => {
             <div className="header-content">
                 <p>Hello. My name is</p>
                 <h1>Michiko Aozasa / Mia.</h1>
-                <h3>A Full-Stack Developer / Engineer</h3>
+                <h3>A Full-Stack Developer</h3>
             </div>
         </header>
       );

@@ -28,17 +28,21 @@
     --bluePurpleColor01: #5643CC;
     --bluePurpleColor02: #572ad4;
     --bluePurpleColor02Tranparent: #572ad49e;
+    --bluePurpleColor02Tranparent: rgba(87, 42, 212, 0.62);
     --darkBluePurpleColor01: #33197a;
     --navyColor01: #172749;
     --grayColor: #696666;
     --gray02Color: #61646d;
     --darkGrayColor01: #42454e;
+    --darkGrayColor01Tranparent: rgb(66, 69, 78, 0.7);
     --darkGrayColor02: #2a2a2b;
+    --darkGrayColor02Tranparent: rgb(42, 42, 43, 0.7);
     --lightGrayColor01: #808080;
     --lightGrayColor02: #ccc8c8;
     --blackColor01: #000;
     --blackColor02: #141414;
     --whiteColor01: #fff;
+    --whiteColor01Tranparent: rgb(255, 255, 255, 0.5);
     --whiteColor02: #f7f8f9;
 
     /** animation */
@@ -47,6 +51,17 @@
     --easeOutCirc01: cubic-bezier(0, 0.55, 0.45, 1);
     /** animation end */
 }
+
+/* DEV: outline for all the elements */
+/* * {
+    outline: 1px green solid;
+}
+
+section {
+    outline: 1px red solid;
+} */
+
+/* DEV end: outline for all the elements */
 
 html {
     width: 100vw;

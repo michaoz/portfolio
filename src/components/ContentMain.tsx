@@ -83,7 +83,7 @@ const ContentMain = (props: PropTypeContentMain) => {
     if (contactRef.current !== null) {
       mainContentContactObserver.observe(contactRef.current);
     }
-    /* Observe Skills in main content element end */
+    /* Observe Contact in main content element end */
 
     // get elms from each section
     const headerMenuRefs = [aboutRef, projectsRef, skillsRef, contactRef];
