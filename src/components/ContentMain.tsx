@@ -8,6 +8,7 @@ import { PropTypeContentMainProjects } from '../type/PropTypeContentMainProjects
 import Skills from './ContentMain/Skills';
 import { PropTypeContentMainSkills } from '../type/PropTypeContentMainSkills';
 import Contact from './ContentMain/Contact';
+import { PropTypeContentMainContact } from '../type/PropTypeContentMainContact';
 
 const ContentMain = (props: PropTypeContentMain) => {
   const { setVisibleMobileHeaderMenu, setHeaderMenuRefs } = props;
@@ -16,7 +17,9 @@ const ContentMain = (props: PropTypeContentMain) => {
 
   const [visiblePrjBorders, setVisiblePrjBorders] = useState<boolean>(false);
   // Activate or stop the animation of visibility when scrolled to the Skills page
-  const [visibleSkillsPieChart, setVisibleSkillsPieChart] = useState<boolean>(false);
+  const [reachSkillsPage, setReachSkillsPage] = useState<boolean>(false);
+  // Activate or stop the animation of visibility when scrolled to the Contact page
+  const [reachContactPage, setReachContactPage] = useState<boolean>(false);
 
   /** each section */
   const aboutRef = useRef<HTMLDivElement | null>(null);
@@ -30,7 +33,10 @@ const ContentMain = (props: PropTypeContentMain) => {
     visiblePrjBorders: visiblePrjBorders,
   }
   const propSkills: PropTypeContentMainSkills = {
-    visibleSkillsPieChart: visibleSkillsPieChart,
+    reachSkillsPage: reachSkillsPage,
+  }
+  const propContact: PropTypeContentMainContact = {
+    reachContactPage: reachContactPage,
   }
   /** props end */
 
@@ -61,12 +67,23 @@ const ContentMain = (props: PropTypeContentMain) => {
     // to show borders of projects.
     const mainContentSkillsObserver = new IntersectionObserver((entries) => {
       const entry = entries[0];  // need the 1st elm only
-      setVisibleSkillsPieChart(entry.isIntersecting);
+      setReachSkillsPage(entry.isIntersecting);
     })
     if (skillsRef.current !== null) {
       mainContentSkillsObserver.observe(skillsRef.current);
     }
     /* Observe Skills in main content element end */
+
+    /* Observe Contact in main content element */
+    // to show borders of projects.
+    const mainContentContactObserver = new IntersectionObserver((entries) => {
+      const entry = entries[0];  // need the 1st elm only
+      setReachContactPage(entry.isIntersecting);
+    })
+    if (contactRef.current !== null) {
+      mainContentContactObserver.observe(contactRef.current);
+    }
+    /* Observe Contact in main content element end */
 
     // get elms from each section
     const headerMenuRefs = [aboutRef, projectsRef, skillsRef, contactRef];
@@ -87,7 +104,7 @@ const ContentMain = (props: PropTypeContentMain) => {
           <Skills {...propSkills} />
         </section>
         <section className="contact wrapper" id="contact" ref={contactRef}>
-          <Contact />
+          <Contact {...propContact} />
         </section>
       </div>
     </main>

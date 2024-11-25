@@ -10,10 +10,19 @@ const MobileHeaderMenu = (props: PropTypeMobileHeaderMenu) => {
         const eventId = e.currentTarget.id;
         // Scroll the screen smoothly.
         for (var ref of headerMenuRefs) {
+            const top = ref.current?.offsetTop;
             if (eventId === ref?.current?.id) {
                 ref.current?.scrollIntoView({
-                    behavior: 'smooth'
+                    block: "start",
+                    inline: "start",
+                    behavior: "smooth"
                 });
+                console.log("offsetTop", top);
+                // window.scrollTo({
+                //     left: 0,
+                //     top: top,
+                //     behavior: "smooth"
+                // });
                 break;
             }
         }        
@@ -46,7 +55,7 @@ const MobileHeaderMenu = (props: PropTypeMobileHeaderMenu) => {
                         <span>Contact</span>
                     </button>
                 </li>
-                <li className="list-items">
+                {/* <li className="list-items">
                     <button className="header-menu-btn" id="languages" type="button" onClick={handleHeaderMenuButton}>
                         <i className="menu-icon languages">
                             <span>・・・</span>
@@ -54,7 +63,7 @@ const MobileHeaderMenu = (props: PropTypeMobileHeaderMenu) => {
                         </i>
                         <span>Languages</span>
                     </button>
-                </li>
+                </li> */}
             </ul>
         </nav>
       );

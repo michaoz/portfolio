@@ -1,6 +1,7 @@
 .mobile-header-menu {
     right: 0;
-    bottom: 5vh;
+    /* bottom: 5vh; */
+    bottom: 20vh;
     position: fixed;
     z-index: 100;
     display: none;
