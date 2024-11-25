@@ -1,9 +1,27 @@
 .contact-content {
     margin-left: 10vh;  /* h1 width */
     font-size: var(--fontSize02);
+    position: relative;
 }
 
-.contact-content > .contact-text {
+.active.contact-content {
+    animation: fadein-text 1s var(--easeInOutSine01);
+}
+
+@keyframes fadein-text {
+    0% {
+        display: none;
+        opacity: 0;
+        bottom: -50px;
+    }
+    100% {
+        display: block;
+        opacity: 1;
+        bottom: 0px;
+    }
+}
+
+.contact-content > div {
     margin: 5vw;
 }
 
@@ -32,13 +50,13 @@
 #email > .contact-title {
     font-family: var(--fontFamily02);
     word-break: break-all;
-    width: 20vw;
+    width: 10vw;
 }
 
 #linkedin > .contact-title {
     font-family: var(--fontFamily02);
     word-break: break-all;
-    width: 20vw;
+    width: 10vw;
 }
 
 .contact-title {
@@ -75,29 +93,29 @@
     position: absolute;
     width: 1.3em;
     height: calc(1.3em * 1.3);
-    border: 1px solid var(--blackColor);
+    border: 1px solid var(--whiteColor01);
     border-radius: 2px;
 }
 
 .icon-copy > #icon-copy-back {
-    background-color: var(--lightBlueColor01);
+    background-color: var(--blackColor01);
     &:hover {
-        background-color: var(--lightBluePurpleColor01);
+        background-color: var(--darkBluePurpleColor01);
     }
     &:hover~#icon-copy-front {
-        background-color: var(--lightBluePurpleColor01);
+        background-color: var(--darkBluePurpleColor01);
     }
 }
 
 .icon-copy > #icon-copy-front {
-    background-color: var(--lightBlueColor01);
+    background-color: var(--blackColor01);
     margin-left: 0.2em;
     margin-top: 0.2em;
     &:hover {
-        background-color: var(--lightBluePurpleColor01);
+        background-color: var(--darkBluePurpleColor01);
     }
 }
 
 #icon-copy-back:has(~#icon-copy-front:hover){
-    background-color: var(--lightBluePurpleColor01);
+    background-color: var(--darkBluePurpleColor01);
 }

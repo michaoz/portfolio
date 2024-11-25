@@ -7,6 +7,8 @@ import { PropTypeContentMain } from './type/PropTypeContentMain';
 import { PropTypeMobileHeaderMenu } from './type/PropTypeMobileHeaderMenu';
 import { PropTypeHeaderMenu } from './type/PropTypeHeaderMenu';
 import Footer from './components/Footer';
+import JumpToTop from './components/JumpToTop';
+import { PropTypeJumpToTop } from './type/PropTypeJumpToTop';
 
 function App() {
   const [visibleMobileHeaderMenu, setVisibleMobileHeaderMenu] = useState<boolean>(false);
@@ -22,6 +24,9 @@ function App() {
     visibleMobileHeaderMenu: visibleMobileHeaderMenu,
     headerMenuRefs: headerMenuRefs,
   }
+  const propJumpToTop: PropTypeJumpToTop = {
+    visibleMobileHeaderMenu: visibleMobileHeaderMenu,
+  }
   const propContentMain: PropTypeContentMain = {
     setVisibleMobileHeaderMenu: setVisibleMobileHeaderMenu,
     setHeaderMenuRefs: setHeaderMenuRefs,
@@ -32,6 +37,7 @@ function App() {
     <div id="app">
         <Header {...propHeaderMenu} />
         <MobileHeaderMenu {...propMobileHeaderMenu} />
+        <JumpToTop {...propJumpToTop} />
         <ContentMain {...propContentMain} />
         <Footer />
     </div>

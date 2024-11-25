@@ -18,12 +18,12 @@ const About = () => {
                         <br/>
                         <br/>
                         I am ...
-                        <ul className="i-am-list">
-                            <li>a full-stack developer.</li>
-                            <li>passionate about creating great digital experiences.</li>
-                            <li>able to soak up unfamiliar or new information quickly like a sponge.</li>
-                        </ul>
                     </p>
+                    <ul className="i-am-list">
+                        <li>a full-stack developer.</li>
+                        <li>passionate about creating great digital experiences.</li>
+                        <li>able to soak up unfamiliar or new information quickly like a sponge.</li>
+                    </ul>
                 </div>
             </div>
         </div>

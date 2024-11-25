@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import '../../style/App.css';
 import '../../style/components/ContentMain/Contact.css';
+import { PropTypeContentMainContact } from '../../type/PropTypeContentMainContact';
 
-const Contact = () => {
+const Contact = (props: PropTypeContentMainContact) => {
+    const { reachContactPage } = props;
+    const fadeinText = reachContactPage
 
     // const email = "a.bmg3168@icloud";
     const email = "a.bmg3168@icloud.com";
@@ -42,7 +45,7 @@ const Contact = () => {
     return (
         <div>
             <h1>Contact</h1>
-            <div className="contact-content">
+            <div className={ fadeinText ? "active contact-content" : "contact-content" }>
                 <div className="contact-text">
                     <p>
                         Feel free to reach out if you have any questions, project opportunities, or if you would just like to connect.
@@ -55,7 +58,7 @@ const Contact = () => {
                         <p className="contact-title">Email</p>
                         <p>{email}</p>
                         <div>
-                            <button className="btn-copy" id="copy-email" value={email} onClick={handleCopyToClipboard}>
+                            <button type="button" className="btn-copy" id="copy-email" value={email} onClick={handleCopyToClipboard}>
                                 <p>{copyTextEmail}</p>
                                 <i className="icon-copy">
                                     <div id="icon-copy-back" />
@@ -68,7 +71,7 @@ const Contact = () => {
                         <p className="contact-title">Linkedin</p>
                         <p>{linkedin}</p>
                         <div>
-                            <button className="btn-copy" id="copy-linkedin" value={linkedin} onClick={handleCopyToClipboard}>
+                            <button type="button" className="btn-copy" id="copy-linkedin" value={linkedin} onClick={handleCopyToClipboard}>
                                 <p>{copyTextLinkedin}</p>
                                 <i className="icon-copy">
                                     <div id="icon-copy-back" />
