@@ -18,7 +18,7 @@ header {
 }
 
 .header-menu li {
-    font-size: 20px;
+    font-size: var(--fontSize01);
     list-style: none;
     float: left;
     /* width: 100px; */
