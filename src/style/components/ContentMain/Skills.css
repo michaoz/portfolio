@@ -1,7 +1,7 @@
 .skills-text {
     margin-left: 10vh;  /* h1 width */
     margin-bottom: 5em;
-    font-size: 3vh;
+    font-size: var(--fontSize01);
     padding-left: 5vw;
 }
 
@@ -22,7 +22,10 @@
 .skills-piechart > .piechart {
     position: relative;
     height: 30vh!important;
-    width: 30vh!important;
+    /* width: 30vh!important; */
+    width: 90%;
+    max-width: 30vw!important;
+    font-size: var(--fontSize02)!important;
 }
 
 .skills-piechart > .labels {
@@ -44,6 +47,7 @@
 .labels-li {
     display: flex;
     margin: 0.2em 0;
+    font-size: var(--fontSize02);
 }
 
 .labels-li > div {

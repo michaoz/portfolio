@@ -21,7 +21,7 @@
 .about-text {
     margin: 0vh 40vh 5vh auto;  /* position at the right by setting margin-left auto */
     width: 100%;
-    font-size: 3.5vh;
+    font-size: calc(var(--fontSize01) + 1vw);
 }
 
 .i-am-list {

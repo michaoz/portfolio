@@ -8,8 +8,8 @@ const Contact = (props: PropTypeContentMainContact) => {
     const fadeinText = reachContactPage
 
     // const email = "a.bmg3168@icloud";
-    const email = "a.bmg3168@icloud.com";
-    const linkedin = "https://www.linkedin.com/in/michiko-aozasa-07b374271";
+    const email = "aaaaaaaaaaaaaaaaaa.com";
+    const linkedin = "https://www.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
 
     const [copyTextEmail, setCopyTextEmail] = useState<string>("copy");
     const [copyTextLinkedin, setCopyTextLinkedin] = useState<string>("copy");
