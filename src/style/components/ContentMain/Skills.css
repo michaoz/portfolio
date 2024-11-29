@@ -1,7 +1,7 @@
 .skills-text {
     margin-left: 10vh;  /* h1 width */
     margin-bottom: 5em;
-    font-size: var(--fontSize01);
+    font-size: var(--fontSize02);
     padding-left: 5vw;
 }
 
@@ -47,7 +47,7 @@
 .labels-li {
     display: flex;
     margin: 0.2em 0;
-    font-size: var(--fontSize02);
+    font-size: var(--fontSize03);
 }
 
 .labels-li > div {

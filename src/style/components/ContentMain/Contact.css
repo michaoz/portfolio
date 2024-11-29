@@ -26,7 +26,7 @@
 }
 
 .contact-text {
-    font-size: calc(var(--fontSize01) - 0.2vw);
+    font-size: var(--fontSize02);
 }
 
 .contact-means > div {
