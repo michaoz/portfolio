@@ -22,8 +22,7 @@
 .skills-piechart > .piechart {
     position: relative;
     height: 30vh!important;
-    /* width: 30vh!important; */
-    width: 90%;
+    width: 13vw!important;
     max-width: 30vw!important;
     font-size: var(--fontSize02)!important;
 }
