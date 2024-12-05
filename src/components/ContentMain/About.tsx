@@ -8,7 +8,7 @@ const About = () => {
             <h1>About Me</h1>
             <div className="about-content">
                 <div className="about-my-photo">
-                    <img src={require("../../images/my-photo.jpg")} alt="Photo of Me"/>
+                    <img src={require("../../images/my-photo-dummy.png")} alt="Photo of Me"/>
                 </div>
                 <div className="about-text">
                     <p>

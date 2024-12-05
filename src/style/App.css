@@ -3,6 +3,7 @@
     --fontFamily01: 'Garamond', serif;
     --fontFamily02: 'Courier New', monospace;
     --fontFamily03: 'Trebuchet MS', sans-serif;
+    --fontFamily04: 'Verdana', sans-serif;
 
     --fontSize01: 2vw;
     --fontSize02: 1.5vw;
@@ -98,6 +99,12 @@ main > div {
 .wrapper {
     width: 100%;
     /* max-width: 1820px; */
+    & h1 {
+        color: transparent;
+        -webkit-text-stroke: 0.01em var(--whiteColor01);
+        letter-spacing: .2em;
+        font-family: var(--fontFamily03);
+    }
 }
 
 .header-menu-btn {
