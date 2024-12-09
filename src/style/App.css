@@ -3,6 +3,8 @@
     --fontFamily01: 'Garamond', serif;
     --fontFamily02: 'Courier New', monospace;
     --fontFamily03: 'Trebuchet MS', sans-serif;
+    --fontFamily04: 'Verdana', sans-serif;
+    --fontFamily05: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
 
     --fontSize01: 2vw;
     --fontSize02: 1.5vw;
@@ -42,6 +44,7 @@
     --lightGrayColor02: #ccc8c8;
     --blackColor01: #000;
     --blackColor02: #141414;
+    --blackColor03: #2e2e2e;
     --whiteColor01: #fff;
     --whiteColor01Tranparent: rgb(255, 255, 255, 0.5);
     --whiteColor02: #f7f8f9;
@@ -98,6 +101,20 @@ main > div {
 .wrapper {
     width: 100%;
     /* max-width: 1820px; */
+    & h1 {
+        color: transparent;
+        /* -webkit-text-stroke: 0.01em var(--whiteColor01); */
+        letter-spacing: .2em;
+        font-family: var(--fontFamily05);
+        text-transform: capitalize;  /* make the first alphabet capital */
+        /* display: block; */
+
+        color: var(--blackColor02);
+        -webkit-text-stroke: 0.01em var(--lightGrayColor02);
+        text-shadow: 0 8px 9px var(--grayColor);
+        font-size: calc(var(--fontSize01) + 0.5em);
+        font-weight: bold;
+    }
 }
 
 .header-menu-btn {

@@ -1,8 +1,14 @@
+section.about {
+    height: 100vh;
+}
+
 .about-content {
     display: flex;
     margin: 10vh;
     /* width: 100%; */
     height: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 .about-my-photo {
@@ -26,4 +32,60 @@
 
 .i-am-list {
     margin: 0;
+}
+
+.wave-bkground-color {
+    width: 100vw;
+    height: 50vh;
+    position: relative;
+    top: -40vh;
+    left: 0;
+    background: linear-gradient(
+        to right,
+        var(--blackColor02) 0%, 
+        var(--lightBlueColor02) 25%, 
+        var(--bluePurpleColor02) 50%, 
+        var(--darkPink03Color) 75%, 
+        var(--blackColor02) 100%
+    );
+    background-size: 400% 400%;
+    animation: moving-wave 10s ease infinite;
+    transform: rotate(-6.5deg);
+    left: -6vh;
+    width: 200vw;
+}
+
+.wave-bkground-container {
+    background-color: transparent;
+    width: 100vw;
+    height: 50vh;
+    position: relative;
+    display: flex;
+    top: calc(-50vh + (-40vh));  /* (.wave-bkground-container height) + (.wave-bkground-color -top height) */
+    box-shadow: var(--blackColor02) 50px 0px 50px 0px;
+    mix-blend-mode: darken;
+    transform: rotate(-6.5deg);
+    left: -6vh;
+    width: 200vw;
+}
+
+@keyframes moving-wave {
+    0% {
+        background-position: 50% 0%;
+    }
+    50% {
+        background-position: 50% 100%;
+    }
+    100% {
+        background-position: 50% 0%;
+    }
+}
+
+.canvas-wave {
+    width: 100%;
+    height: 100%;
+    background-color: var(--blackColor02);
+    position: absolute;
+    top: 0;
+    left: 0;
 }
