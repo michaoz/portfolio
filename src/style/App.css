@@ -31,7 +31,6 @@
     --bluePurpleColor01: #5643CC;
     --bluePurpleColor02: #572ad4;
     --bluePurpleColor02Tranparent: #572ad49e;
-    --bluePurpleColor02Tranparent: rgba(87, 42, 212, 0.62);
     --darkBluePurpleColor01: #33197a;
     --navyColor01: #172749;
     --grayColor: #696666;
@@ -102,11 +101,13 @@ main > div {
     width: 100%;
     /* max-width: 1820px; */
     & h1 {
-        color: transparent;
+        /* color: transparent; */
         /* -webkit-text-stroke: 0.01em var(--whiteColor01); */
         letter-spacing: .2em;
         font-family: var(--fontFamily05);
         text-transform: capitalize;  /* make the first alphabet capital */
+        position: relative;
+        z-index: 1;
         /* display: block; */
 
         color: var(--blackColor02);
