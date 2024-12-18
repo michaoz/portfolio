@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import '../../style/App.css';
 import '../../style/components/ContentMain/Contact.css';
+import '../../style/components/ContentMain/ContactCanvas.css';
 import { ReactP5Wrapper } from 'react-p5-wrapper';
-import CanvasRollingBallP5 from './CanvasRollingBallP5';
-import CanvasWave from './CanvasWave';
-import CanvasParticlesWave from './CanvasParticlesWave';
+import CanvasRollingBallP5 from './Canvavs/CanvasRollingBallP5';
+import CanvasWave from './Canvavs/CanvasWave';
+import CanvasParticlesWave from './Canvavs/CanvasParticlesWave';
 
 type typePropContactCanvas = {
     reachContactPage: boolean;
@@ -43,7 +44,7 @@ const ContactCanvas = () => {
     }
 
     return (
-        <div className="about-anim-container">
+        <div className="contact-anim-container">
             {/* <CanvasParticlesWave /> */}
             {/* <CanvasWave {...PropTypeCanvasWave}/> */}
             {/* <ReactP5Wrapper sketch={CanvasRollingBallP5}></ReactP5Wrapper> */}

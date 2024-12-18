@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import '../../style/App.css';
-import '../../style/components/ContentMain/About.css';
+import '../../../style/App.css';
+import '../../../style/components/ContentMain/About.css';
 import { createNoise2D } from 'simplex-noise';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { OrbitControls } from '@react-three/drei/core/OrbitControls';
 import { Stats } from '@react-three/drei/core/Stats';
-import { vertexShader, fragmentShader } from '../CommonFeature/js/shader';
+import { vertexShader, fragmentShader } from '../../../lib/shader';
 
 type PropTypeCanvasWave = {
     reachContactPage: boolean,

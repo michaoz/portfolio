@@ -1,0 +1,57 @@
+:root {
+    /** font */
+    --fontFamily01: 'Garamond', serif;
+    --fontFamily02: 'Courier New', monospace;
+    --fontFamily03: 'Trebuchet MS', sans-serif;
+    --fontFamily04: 'Verdana', sans-serif;
+    --fontFamily05: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+
+    --fontSize01: 2vw;
+    --fontSize02: 1.5vw;
+    --fontSize03: 1vw;
+    /** font end */
+
+    /** color */
+    --lightPink02Color: rgb(255, 255, 157);
+    --red01: #DC143C;
+    --orange01: #FF570D;
+    --lightBluePinkColor: #FFE0ED;
+    --yellowColor01: #FFFF9D;
+    --lightYellowColor: #FFFFDD;
+    --greenColor: #5ebfac;
+    --green02Color: #189e83;
+    --lightPink01Color: #FF69B4;
+    --lightPink02Color: #ffb6d4;
+    --darkPink01Color: #DA1884;
+    --darkPink02Color: #bc1873;
+    --darkPink03Color: #a11462;
+    --lightBlueColor01: #dbebf8;
+    --lightBlueColor02: #abdcf5;
+    --lightBluePurpleColor01: #686aef;
+    --bluePurpleColor01: #5643CC;
+    --bluePurpleColor02: #572ad4;
+    --bluePurpleColor02Tranparent: #572ad49e;
+    --darkBluePurpleColor01: #33197a;
+    --navyColor01: #172749;
+    --grayColor: #696666;
+    --gray02Color: #61646d;
+    --darkGrayColor01: #42454e;
+    --darkGrayColor01Tranparent: rgb(66, 69, 78, 0.7);
+    --darkGrayColor02: #2a2a2b;
+    --darkGrayColor02Tranparent: rgb(42, 42, 43, 0.7);
+    --lightGrayColor01: #808080;
+    --lightGrayColor02: #ccc8c8;
+    --blackColor01: #000;
+    --blackColor02: #141414;
+    --blackColor03: #2e2e2e;
+    --whiteColor01: #fff;
+    --whiteColor01Tranparent: rgb(255, 255, 255, 0.5);
+    --whiteColor02: #f7f8f9;
+
+    /** animation */
+    --easeIn01: cubic-bezier(0.33, 1, 0.68, 1);
+    --easeInOutSine01: cubic-bezier(0.37, 0, 0.63, 1);
+    --easeOutCirc01: cubic-bezier(0, 0.55, 0.45, 1);
+    /** animation end */
+}
+

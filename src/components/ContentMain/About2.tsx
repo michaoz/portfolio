@@ -30,9 +30,6 @@ const About = (props: PropTypeContentMainAbout) => {
         }
     }, [reachAboutPage])
 
-    const handleBackgroundAnimation = (reachAboutPage: boolean) => {
-    };
-    
     const tick = (cxt: CanvasRenderingContext2D) => {
         frameRef.current = requestAnimationFrame(() => tick(cxt));
         const time = Date.now() / 1000;  // 媒介変数（時間）

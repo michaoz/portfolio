@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import '../../style/App.css';
 import '../../style/components/ContentMain/About.css';
-import { PropTypeContentMainAbout } from '../../type/PropTypeContentMainAbout';
+import { PropTypeContentMainAbout } from '../../../type/PropTypeContentMainAbout';
 import { createNoise2D } from 'simplex-noise';
 
 const CanvasRollingBall = (props: PropTypeContentMainAbout) => {

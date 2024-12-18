@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import '../../style/App.css';
-import '../../style/components/ContentMain/About.css';
+import '../../../style/App.css';
+import '../../../style/components/ContentMain/About.css';
 import { createNoise2D } from 'simplex-noise';
 
 type PropTypeCanvasWave = {

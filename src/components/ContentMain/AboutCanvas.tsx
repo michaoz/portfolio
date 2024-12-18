@@ -3,7 +3,7 @@ import '../../style/App.css';
 import '../../style/components/ContentMain/About.css';
 import '../../style/components/ContentMain/AboutCanvas.css';
 import { ReactP5Wrapper } from 'react-p5-wrapper';
-import CanvasParticlesWave from './CanvasParticlesWave';
+import CanvasParticlesWave from './Canvavs/CanvasParticlesWave';
 
 type typePropContactCanvas = {
     reachContactPage: boolean;
