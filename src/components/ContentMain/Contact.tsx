@@ -2,17 +2,18 @@ import { useState } from 'react';
 import '../../style/App.css';
 import '../../style/components/ContentMain/Contact.css';
 import { PropTypeContentMainContact } from '../../type/PropTypeContentMainContact';
+import ContactCanvas from './ContactCanvas';
 
 const Contact = (props: PropTypeContentMainContact) => {
     const { reachContactPage } = props;
     const fadeinText = reachContactPage
 
+    const [copyTextEmail, setCopyTextEmail] = useState<string>("copy");
+    const [copyTextLinkedin, setCopyTextLinkedin] = useState<string>("copy");
+
     // const email = "a.bmg3168@icloud";
     const email = "aaaaaaaaaaaaaaaaaa.com";
     const linkedin = "https://www.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-
-    const [copyTextEmail, setCopyTextEmail] = useState<string>("copy");
-    const [copyTextLinkedin, setCopyTextLinkedin] = useState<string>("copy");
 
     const handleCopyToClipboard = async(e: React.MouseEvent<HTMLButtonElement>) => {
         const target = e.currentTarget;
@@ -40,6 +41,10 @@ const Contact = (props: PropTypeContentMainContact) => {
                 setCopyTextLinkedin(textCopy);
             }, copiedTimeout)
         }
+    }
+
+    const propContactCanvas = {
+        reachContactPage: reachContactPage
     }
     
     return (
@@ -82,6 +87,8 @@ const Contact = (props: PropTypeContentMainContact) => {
                     </div>
                 </div>
             </div>
+            {/* <ContactCanvas {...propContactCanvas}/> */}
+            <ContactCanvas />
         </div>
     );
 }
