@@ -3,7 +3,7 @@
     height: 100vh;
     position: relative;
     top: -80vh;
-    left: 10vw;
+    margin-left: 10vw;
 }
 
 .wave-bkground-color {
