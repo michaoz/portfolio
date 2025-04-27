@@ -8,7 +8,7 @@
 
     --fontSize01: 2vw;
     --fontSize02: 1.5vw;
-    --fontSize03: clamp(13px, 1vw, 20px);
+    --fontSize03: clamp(11px, 1vw, 20px);
     /** font end */
 
     /** color */
