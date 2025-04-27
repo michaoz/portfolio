@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import '../../style/App.css';
 import '../../style/components/ContentMain/About.css';
-import '../../style/components/ContentMain/AboutCanvas.css';
 import { PropTypeContentMainAbout } from '../../type/PropTypeContentMainAbout';
 import { createNoise2D } from 'simplex-noise';
-import AboutCanvas from './AboutCanvas';
 
+// この乱数の算出にnoise2Dを使うと、算出が速すぎて滑らかなアニメーションができなさそう？
+// -> 三角関数（sin）の算出方法を、一旦採用（本当はperlin noiseを使いたいが...）。
 const About = (props: PropTypeContentMainAbout) => {
     const { reachAboutPage } = props;
 
@@ -45,43 +45,45 @@ const About = (props: PropTypeContentMainAbout) => {
             const canvasWidth = cxt.canvas.width;
             const canvasHeight = cxt.canvas.height;
 
+            // simplex noise (v4.0.3)
+            const noise2D = createNoise2D();
+
             cxt.clearRect(0, 0, canvasWidth, canvasHeight);  // clear/reset the screen
-            cxt.lineWidth = 1;  // line width
+            cxt.lineWidth = 3;  // line width
             cxt.beginPath();  // begin a new path
             cxt.strokeStyle =  "#fff";
-            cxt.fillStyle = "rgba(20, 20, 20, 0.5)";
-            cxt.lineCap = "square";
-            cxt.fillRect(0, 0, canvasWidth, canvasHeight);
 
-            const segmentNum = 150;  // 分割数
-            const lineNum = 5;  // the number of lines
-            const amplitude = canvasHeight / 2.5;  // 振幅：値が大きい->波の縦振れの幅が大きくなる
+            const segmentNum = 100;  // 分割数
+            const lineNum = 60;  // the number of lines
+            const amplitude = canvasHeight / 3;  // 振幅
             
-            var xOffset = 0;
-            [...Array(lineNum).keys()].forEach((j: number) => {
+            // [...Array(lineNum).keys()].forEach((j: number) => {
                 [...Array(segmentNum).keys()].forEach((i: number) => {
-                    const x = (i / (segmentNum - 1)) * canvasWidth + xOffset;  // x coordinate
+                    const x = (i / (segmentNum - 1)) * canvasWidth;  // x coordinate
 
                     /* Defining the y coordinate ptn1: with radian */
-                    const radian = (i / segmentNum) * Math.PI + time;  // radian
-                    const y = amplitude * Math.sin(radian) + canvasHeight / 2;  // y coordinate
+                    // const radian = (i / segmentNum) * Math.PI + time;  // radian
+                    // const y = amplitude * Math.sin(radian) + canvasHeight / 2;  // y coordinate
                     /* Defining the y coordinate ptn1: with radian end */
+
+                    /* Defining the y coordinate ptn2: with simplex noise */
+                    // const px = i / (50 + j);  // x input (横軸の入力値)
+                    // const py = j / 50 + time;  // time input (時間の入力値)
+                    const px = i / 50;  // x input (横軸の入力値)
+                    const py = time / 3;  // time input (時間の入力値)
+                    const y = amplitude * noise2D(px, py) + canvasHeight / 2;  // y coordinate
+                    /* Defining the y coordinate ptn2: with simplex noise end */
 
                     if (i === 0) {
                         cxt.moveTo(x, y);  // begining position of the line
                     } else {
                         cxt.lineTo(x, y);  // end position of the line
                     }
-                    console.log(`x, y: ${x}, ${y}`);  // To check if the canvas line is moving
+                    console.log(`px, py: ${px}, ${py}`);  // To check if the canvas line is moving                    
+                    console.log(`noise2D: ${noise2D(px, py)}`);  // To check if the canvas line is moving                    
+                    // console.log(`x, y: ${x}, ${y}`);  // To check if the canvas line is moving
                 });
-                if (j % 2 === 0) {
-                    xOffset += 15;
-                } else if (j % 3 === 0 || j % 5 === 0) {
-                    xOffset += 20;
-                } else {
-                    xOffset -= 4;
-                }
-            });
+            // });
             cxt.stroke();  // draw a line
         }
     };
@@ -109,12 +111,14 @@ const About = (props: PropTypeContentMainAbout) => {
                     </ul>
                 </div>
             </div>
-            <AboutCanvas />
             {/* <canvas id="canvas-about-paint" /> */}
-            {/* <div className="wave-bkground-color"></div> */}
-            {/* <div className="wave-bkground-container">
+            <div className="wave-bkground-container">
                 <canvas className="canvas-wave" ref={canvasRef} ></canvas>
-            </div> */}
+                {/* <div className="paint-bkground visible" id="paint-vis-1"></div>
+                <div className="paint-bkground hidden" id="paint-hid-1"></div>
+                <div className="paint-bkground visible" id="paint-vis-2"></div>
+                <div className="paint-bkground hidden" id="paint-hid-2"></div> */}
+            </div>
         </div>
     );
 }

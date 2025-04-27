@@ -96,28 +96,28 @@ const Skills = (props: PropTypeContentMainSkills) => {
                                         data={chartData}
                                         options={{
                                             plugins: {
-                                            title: {
-                                                display: true,
-                                                text: skillDataColumnTuple[idx],
-                                                color: textColor,
-                                                font: {
-                                                    size: textFontSizeTitle,
-                                                    family: textFontFamily,
-                                                    weight: textFontWeight,
-                                                }
-                                            },
-                                            legend: {
-                                                display: false,  // hide the labels
-                                                labels: {
+                                                title: {
+                                                    display: true,
+                                                    text: skillDataColumnTuple[idx],
                                                     color: textColor,
-                                                    padding: labelsPadding,
                                                     font: {
-                                                        size: textFontSizeLabel,
+                                                        size: textFontSizeTitle,
                                                         family: textFontFamily,
+                                                        weight: textFontWeight,
                                                     }
                                                 },
-                                                position: labelsPosition
-                                            }
+                                                legend: {
+                                                    display: false,  // hide the labels
+                                                    labels: {
+                                                        color: textColor,
+                                                        padding: labelsPadding,
+                                                        font: {
+                                                            size: textFontSizeLabel,
+                                                            family: textFontFamily,
+                                                        }
+                                                    },
+                                                    position: labelsPosition
+                                                }
                                             },
                                             animation: {
                                                 // duration: animationDuration,

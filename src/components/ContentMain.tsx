@@ -9,12 +9,14 @@ import Skills from './ContentMain/Skills';
 import { PropTypeContentMainSkills } from '../type/PropTypeContentMainSkills';
 import Contact from './ContentMain/Contact';
 import { PropTypeContentMainContact } from '../type/PropTypeContentMainContact';
+import { PropTypeContentMainAbout } from '../type/PropTypeContentMainAbout';
 
 const ContentMain = (props: PropTypeContentMain) => {
   const { setVisibleMobileHeaderMenu, setHeaderMenuRefs } = props;
 
   const mainContentRef = useRef<HTMLDivElement | null>(null);
 
+  const [reachAboutPage, setReachAboutPage] = useState<boolean>(false);
   const [visiblePrjBorders, setVisiblePrjBorders] = useState<boolean>(false);
   // Activate or stop the animation of visibility when scrolled to the Skills page
   const [reachSkillsPage, setReachSkillsPage] = useState<boolean>(false);
@@ -29,6 +31,9 @@ const ContentMain = (props: PropTypeContentMain) => {
   /** each section end */
 
   /** props */
+  const propAbout: PropTypeContentMainAbout= {
+    reachAboutPage: reachAboutPage,
+  }
   const propProjects: PropTypeContentMainProjects = {
     visiblePrjBorders: visiblePrjBorders,
   }
@@ -51,6 +56,17 @@ const ContentMain = (props: PropTypeContentMain) => {
     if (mainContentRef.current !== null) {
       mainContentObserver.observe(mainContentRef.current);
     }
+
+    /* Observe About in main content element */
+    // to show borders of projects.
+    const mainContentAboutObserver = new IntersectionObserver((entries) => {
+      const entry = entries[0];  // need the 1st elm only
+      setReachAboutPage(entry.isIntersecting);
+    })
+    if (aboutRef.current !== null) {
+      mainContentAboutObserver.observe(aboutRef.current);
+    }
+    /* Observe About in main content element end */
 
     /* Observe Projects in main content element */
     // to show borders of projects.
@@ -95,7 +111,7 @@ const ContentMain = (props: PropTypeContentMain) => {
     <main>
       <div ref={mainContentRef}>
         <section className="about wrapper" id="about" ref={aboutRef}>
-          <About />
+          <About {...propAbout} />
         </section>
         <section className="projects wrapper" id="projects" ref={projectsRef}>
           <Projects {...propProjects} />

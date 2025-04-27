@@ -1,0 +1,13 @@
+.contact-anim-container {
+    width: 100vw;
+    height: 50vh;
+    position: relative;
+}
+
+.canvas-wave-anim {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--whiteColor01);
+}
