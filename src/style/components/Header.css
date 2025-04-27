@@ -6,7 +6,7 @@ header {
     top: 0;
     right: 0;
     position: fixed;
-    margin-right: 10vw;
+    margin-right: 5vw;
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
@@ -21,9 +21,8 @@ header {
     font-size: var(--fontSize03);
     list-style: none;
     float: left;
-    /* width: 100px; */
-    height: 40px;
-    margin: 0px 30px;
+    height: 5vh;
+    margin: 0 2vw;
 }
 
 .header-menu li::after {
@@ -32,9 +31,9 @@ header {
     position: relative;
     display: block;
     width: 100%;
-    height: 7px;
+    height: calc(5vh / 5.5);  /* .header-menu li: height / 5.5 */
     background-color:  var(--lightPink02Color);
-    bottom: -10px;  /* start point of fading in */
+    bottom: calc(5vh / 4);  /* start point of fading in */ /* .header-menu li: height / 4 */
     opacity: 0;
     visibility: hidden;
     transition: 0.3s;
